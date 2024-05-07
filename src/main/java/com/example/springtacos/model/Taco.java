@@ -9,18 +9,18 @@ import lombok.Data;
 import java.util.List;
 
 @Data
-@Entity
+// @Entity // this is for SQL database
 public class Taco {
 
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    // @Id // this is for SQL database
+    // @GeneratedValue(strategy = GenerationType.IDENTITY) // For SQL database
+    // private Long id;// needed only for SQL database
 
     @NotBlank (message = "Name cannot be blank")
     private String name;
 
     @NotNull
-    @ManyToMany
+    // @ManyToMany // for SQL database
     @Size(min = 1, message = "You must choose at least one ingredient")
     private List<Ingredient> ingredients;
 }
